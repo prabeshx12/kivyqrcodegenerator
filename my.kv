@@ -1,0 +1,51 @@
+<MyLayout>
+    data: data
+    save_as: save_as
+
+    BoxLayout:
+        size: (root.width, root.height)
+        orientation: "vertical"
+        padding: 10
+        spacing: 5
+
+        Label:
+            text: "Enter the text that you want to convert to QRcode"
+            color: (0, 0, 0, 1)
+            size_hint: (1, 0.2)
+            font_size: 30
+
+        TextInput:
+            id: data
+            font_size: 30
+            size_hint: (1, 0.5)
+
+        Label:
+            text: "Name the filename for your QRCode without extension"
+            font_size: 30
+            color: (0, 0, 0, 1)
+            size_hint: (1, 0.1)
+
+        TextInput:
+            id: save_as
+            color: (0, 0, 0, 1)
+            font_size: 30
+            size_hint: (0.5, 0.1)
+            pos_hint: {'center_x': 0.5}
+            multiline: False
+            halign: 'center'
+
+
+        Button:
+            text: "Clear"
+            size_hint: (0.2, 0.1)
+            pos_hint: {'center_x': 0.5}
+            font_size: 30
+            on_press: root.clear()
+
+        Button:
+            text: "Convert"
+            size_hint: (0.2, 0.1)
+            pos_hint: {'center_x': 0.5}
+            font_size: 30
+            on_press: root.convert()
+
